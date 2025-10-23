@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
         gap: 20px;
+        perspective: 800px; /* imp hai add karna bahut yeh */ 
 }
 
 .box{
@@ -18,19 +19,26 @@
     width: 150px;
     background-color: orange;
     cursor: pointer;
-    transition-property:all;
+    /*transition-property:all;
     transition-duration: 3s;
     transition-timing-function: ease-in;
-    transition-delay: 2s;
-    transform: rotate(30deg);
-
-    
+    transition-delay: 2s;*/
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-iteration-count: 1;    
 }
-.box:hover{
+
+@keyframes moving {
+    from{
+         transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+/*.box:hover{
     background-color: aqua;
     height: 300px;
     width: 250px;
-    /*transform: scale(3);
-    transform:translate(100px,200px);*/
-    
-}
+    transform: scale(3);
+    transform:translateZ(200px);*//* yeh bina  perspective ke kaam nahi karega bahut kam use hoga yeh */
